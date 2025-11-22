@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Empleado - BCP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #002a8d 0%, #0047bb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #002a8d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+
+        .photo-section {
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .photo-frame {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid #002a8d;
+            box-shadow: 0 5px 15px rgba(0, 42, 141, 0.3);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-section {
+            padding: 30px;
+        }
+
+        .info-row {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #d4edda;
+            color: #155724;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .verification-code {
+            background: #002a8d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">BCP</div>
+            <h2>Banco de Crédito del Perú</h2>
+        </div>
+
+        <div class="photo-section">
+            <div class="photo-frame">
+                <img src="poner imágene' viewBox='0 0 200 200'%3E%3Crect fill='%23e0e0e0' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='%23999'%3EFoto%3C/text%3E%3C/svg%3E" alt="Foto del empleado">
+            </div>
+            <div class="status-badge">
+                <span class="status-icon">✓</span>
+                <span>EMPLEADO VERIFICADO</span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-row">
+                <div class="info-label">Nombre Completo</div>
+                <div class="info-value">Yerfeson Isaac Villegas Diaz</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">Cargo</div>
+                <div class="info-value">Atención al Cliente</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">Departamento</div>
+                <div class="info-value">Servicio al Cliente</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">ID de Empleado</div>
+                <div class="info-value">BCP-18303740</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">Fecha de Ingreso</div>
+                <div class="info-value">12/02/2024</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">Código de Verificación</div>
+                <div class="verification-code">VERIFY-2025-BCP</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Este documento certifica el vínculo laboral con BCP</p>
+            <p style="margin-top: 10px;">Documento generado el: <span id="date"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const today = new Date().toLocaleDateString('es-PE', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('date').textContent = today;
+    </script>
+</body>
+</html>
